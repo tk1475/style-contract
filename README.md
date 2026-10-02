@@ -1,22 +1,35 @@
-# style-contract
+<p align="center">
+  <img src="examples/hero.webp" width="560" alt="One lighthouse prompt rendered with no contract, then with five different style contracts">
+</p>
 
-A Claude Code skill that stops AI images from all looking like AI images.
+<h1 align="center">style-contract</h1>
 
-Ask a model for ten images and you get ten styles, most of them the same glossy default. This skill makes Claude write a **style contract** for your project (finish, palette with exact hexes, composition, subject rules, mood, and two to four modes), save it as `STYLE.md`, and then write every image prompt from it and check every result against it.
+<p align="center">
+  <b>A type system for vibes.</b><br>
+  A Claude Code skill that makes every AI image obey one <code>STYLE.md</code>.
+</p>
 
-Works with GPT Image, Nano Banana, Seedream, Midjourney, Flux and anything else that takes a text prompt.
+---
 
-Same model (GPT Image 2), same subject. Left: a plain prompt. Right: the prompt written from a style contract.
+Ask a model for ten images and you get ten styles, all the same glossy default. This fixes that.
 
-| Plain prompt | With `presets/riso-zine.md` |
-| --- | --- |
-| ![Plain monstera leaf](examples/riso-before.jpg) | ![Riso zine monstera leaf](examples/riso-after.jpg) |
+```text
+you     make a style contract from our brand guide
+claude  writes STYLE.md: finish, palette, composition, subject, mood, modes
+you     hero image for the pricing page
+claude  writes the prompt from STYLE.md, then grades the render against it
+```
 
-| Plain prompt | With `presets/park-poster.md` |
-| --- | --- |
-| ![Plain mountain lake](examples/park-before.jpg) | ![Park poster mountain lake](examples/park-after.jpg) |
-
-The exact prompts are in each preset's *Example prompt* section.
+<table>
+  <tr>
+    <td><img src="examples/wipe-riso.webp" alt="Plain monstera photo wiping into a risograph print"></td>
+    <td><img src="examples/wipe-park.webp" alt="Plain mountain photo wiping into a screen-printed poster"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>same model, same subject, <code>+ riso-zine.md</code></sub></td>
+    <td align="center"><sub>same model, same subject, <code>+ park-poster.md</code></sub></td>
+  </tr>
+</table>
 
 ## Install
 
@@ -24,24 +37,30 @@ The exact prompts are in each preset's *Example prompt* section.
 git clone https://github.com/tk1475/style-contract ~/.claude/skills/style-contract
 ```
 
-Then in any project, ask Claude something like:
+Done. Claude loads it whenever you talk about images.
 
-- "Make a style contract from our brand guide" (attach the PDF or a URL)
-- "Use the riso-zine preset and give me a hero image prompt for the pricing page"
-- "Here are 4 images I like. Turn them into a style contract."
-- "Check these renders against STYLE.md"
+## Say things like
 
-## What is in it
+```text
+use the bauhaus preset, give me 3 blog headers
+here are 4 images I like. reverse-engineer a contract
+grade these renders against STYLE.md
+```
 
-| Path | What |
-| --- | --- |
-| `SKILL.md` | The workflow: build or load a contract, pick a mode, write the prompt, run the pre-flight check |
-| `templates/STYLE.template.md` | The blank contract Claude fills in for your project |
-| `presets/riso-zine.md` | Fluorescent risograph zine look |
-| `presets/park-poster.md` | Mid-century screen-printed park poster look |
+## Presets
 
-Presets are welcome as pull requests: one Markdown file in `presets/`, following the template, with one example prompt.
+| [riso-zine](presets/riso-zine.md) | [park-poster](presets/park-poster.md) | [bauhaus](presets/bauhaus.md) | [ukiyo-e](presets/ukiyo-e.md) | [y2k-chrome](presets/y2k-chrome.md) |
+| :-: | :-: | :-: | :-: | :-: |
+| <img src="examples/lighthouse/1-riso-zine.jpg" width="140"> | <img src="examples/lighthouse/2-park-poster.jpg" width="140"> | <img src="examples/lighthouse/3-bauhaus.jpg" width="140"> | <img src="examples/lighthouse/4-ukiyo-e.jpg" width="140"> | <img src="examples/lighthouse/5-y2k-chrome.jpg" width="140"> |
 
-## License
+Or skip presets and let Claude build yours from a brand guide, a URL, or a moodboard.
 
-MIT
+Works with GPT Image, Nano Banana, Seedream, Midjourney, Flux, and anything else that eats text.
+
+## More
+
+- [How it works](docs/how-it-works.md): the five clauses, and why models actually listen
+- [Preset gallery](presets/README.md): every preset, with its prompt
+- [Add a preset](CONTRIBUTING.md): one Markdown file, one PR
+
+<sub>MIT. Every example image was made with GPT Image 2 from the prompts in <code>presets/</code>. No cherry-picking beyond one render each.</sub>

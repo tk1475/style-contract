@@ -6,6 +6,18 @@ Ask a model for ten images and you get ten styles, most of them the same glossy 
 
 Works with GPT Image, Nano Banana, Seedream, Midjourney, Flux and anything else that takes a text prompt.
 
+Same model (GPT Image 2), same subject. Left: a plain prompt. Right: the prompt written from a style contract.
+
+| Plain prompt | With `presets/riso-zine.md` |
+| --- | --- |
+| ![Plain monstera leaf](examples/riso-before.jpg) | ![Riso zine monstera leaf](examples/riso-after.jpg) |
+
+| Plain prompt | With `presets/park-poster.md` |
+| --- | --- |
+| ![Plain mountain lake](examples/park-before.jpg) | ![Park poster mountain lake](examples/park-after.jpg) |
+
+The exact prompts are in each preset's *Example prompt* section.
+
 ## Install
 
 ```bash

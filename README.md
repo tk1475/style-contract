@@ -33,11 +33,20 @@ claude  writes the prompt from STYLE.md, then grades the render against it
 
 ## Install
 
+In Claude Code:
+
+```text
+/plugin marketplace add tk1475/style-contract
+/plugin install style-contract@style-contract
+```
+
+Or as a plain skill:
+
 ```bash
 git clone https://github.com/tk1475/style-contract ~/.claude/skills/style-contract
 ```
 
-Done. Claude loads it whenever you talk about images.
+Claude loads it whenever you talk about images.
 
 ## Say things like
 

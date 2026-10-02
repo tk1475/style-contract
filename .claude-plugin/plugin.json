@@ -1,0 +1,11 @@
+{
+  "name": "style-contract",
+  "displayName": "Style Contract",
+  "version": "1.0.0",
+  "description": "A type system for vibes: makes every AI image obey one STYLE.md.",
+  "author": { "name": "tk1475", "url": "https://github.com/tk1475" },
+  "homepage": "https://github.com/tk1475/style-contract",
+  "repository": "https://github.com/tk1475/style-contract",
+  "license": "MIT",
+  "keywords": ["image-generation", "art-direction", "prompting", "design", "brand"]
+}

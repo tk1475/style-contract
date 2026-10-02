@@ -1,0 +1,12 @@
+{
+  "name": "style-contract",
+  "description": "Style contracts for AI images",
+  "owner": { "name": "tk1475", "url": "https://github.com/tk1475" },
+  "plugins": [
+    {
+      "name": "style-contract",
+      "source": "./",
+      "description": "A type system for vibes: makes every AI image obey one STYLE.md."
+    }
+  ]
+}

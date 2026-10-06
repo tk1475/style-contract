@@ -72,4 +72,6 @@ Works with GPT Image, Nano Banana, Seedream, Midjourney, Flux, and anything else
 - [Preset gallery](presets/README.md): every preset, with its prompt
 - [Add a preset](CONTRIBUTING.md): one Markdown file, one PR
 
+If this saved you a few rerolls, a ⭐ helps other people find it.
+
 <sub>MIT. Every example image was made with GPT Image 2 from the prompts in <code>presets/</code>. No cherry-picking beyond one render each.</sub>
